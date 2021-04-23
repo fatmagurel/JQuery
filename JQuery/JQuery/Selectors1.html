@@ -1,0 +1,260 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="Scripts/jquery-3.3.1.min.js"></script>
+
+    <style>
+        .metin {
+            width: 170px;
+            height: 150px;
+            float: left;
+            font-size: large;
+            font-family: Bahnschrift;
+            text-align: center;
+            line-height: 150px;
+            margin-left: 12px;
+            box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75); /*gölgelendirme*/
+            border-radius: 10px;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function () {
+            //örnek1 butonuna tıklandığında, mesaj olarak: sayfa üzerindeki tüm plerin html içeriğine merhaba jquery yazdıralım yazsn ve mesajdaki olayı gerçekleştirsin.
+            $("#bir").click(function () {
+                $('p[id != "text"]').html('');
+
+                $("#metin").html("Sayfa üzerindeki tüm p lerin html içeriğine merhaba jquery yazdıralım");
+                $('p[id != "text"]').html('Merhaba JQuery');
+            });
+
+            //ornek2 butonuna tıklandığında mesaj olarak "ID'si metin1 olan p'nin HTML içeriğini değiştirsin" yazsın ve sadece ID si metin1 olan p nin içeriğine Merhaba JQuery yazsın.
+
+            $("#iki").click(function () {
+                $('p[id != "text"]').html('');
+
+                $("#metin").html("ID'si metin1 olan p'nin HTML içeriğini değiştirsin");
+                $('p#metin1').html('Merhaba JQuery');
+            });
+
+            //ornek3 butonuna tıklandığında mesaj olarak "ID'si metin1 ve metin2 olan p'lerin HTML içeriğini değiştirsin" yazsın ve sadece ID si metin1 ve metin2 olan p lerin içeriğine Merhaba JQuery yazsın.
+
+            $("#uc").click(function () {
+                $('p[id != "text"]').html('');
+
+                $("#metin").html("ID'si metin1 ve metin2 olan p'lerin HTML içeriğini değiştirsin");
+                $('p#metin1, p#metin2').html('Merhaba JQuery');
+            });
+
+            //ornek4 butonuna tıklandığında mesaj olarak "Lang attribute'ü 'tr' olan p elementlerinin HTML içeriğini değiştirsin" yazsın ve sadece ilgili p nin içeriğine Merhaba JQuery yazsın.
+
+            $("#dort").click(function () {
+                $('p[id != "text"]').html('');
+
+                $("#metin").html("Lang attribute'ü 'tr' olan p elementlerinin HTML içeriğini değiştirsin");
+                $('p[lang = tr]').html('Merhaba JQuery');
+            });
+
+            //ornek5 butonuna tıklandığında mesaj olarak "Lang attribute'ü 'tr' ve 'en' olan p'lerin HTML içeriğini değiştirsin" yazsın ve sadece ilgili p lerin içeriğine Merhaba JQuery yazsın.
+
+            $("#bes").click(function () {
+                $('p[id != "text"]').html('');
+
+                $("#metin").html("Lang attribute'ü 'tr' ve 'en' olan p'lerin HTML içeriğini değiştirsin");
+                $('p[lang = tr], p[lang = en]').html('Merhaba JQuery');
+            });
+
+            //ornek6 butonuna tıklandığında mesaj olarak "Lang attribute'ü 'en' ve ID' si 'metin2' olan p'lerin HTML içeriğini değiştirsin" yazsın ve sadece ilgili p lerin içeriğine Merhaba JQuery yazsın.
+
+            $("#alti").click(function () {
+                $('p[id != "text"]').html('');
+
+                $("#metin").html("Lang attribute'ü 'en' ve ID' si 'metin2' olan p'lerin HTML içeriğini değiştirsin");
+                $('p[lang = en], #metin2').html('Merhaba JQuery');
+            });
+
+            //ornek7 butonuna tıklandığında mesaj olarak "ID'si 'metin3' olmayan p'lerin HTML içeriğini değiştirsin" yazsın ve sadece ilgili p lerin içeriğine Merhaba JQuery yazsın.
+
+            $("#yedi").click(function () {
+                $('p[id != "text"]').html('');
+
+                $("#metin").html("ID'si 'metin3' olmayan p'lerin HTML içeriğini değiştirsin");
+                $('p[id != "metin3"]').html('Merhaba JQuery');
+            });
+
+            //ornek8 butonuna tıklandığında mesaj olarak "ID'si 'me' ile başlayan p'lerin HTML içeriğini değiştirsin" yazsın ve sadece ilgili p lerin içeriğine Merhaba JQuery yazsın.
+
+            $("#sekiz").click(function () {
+                $('p[id != "text"]').html('');
+
+                $("#metin").html("ID'si 'me' ile başlayan p'lerin HTML içeriğini değiştirsin");
+                $('p[id ^="me"]').html('Merhaba JQuery');
+            });
+
+            //ornek9 butonuna tıklandığında mesaj olarak "ID'si '6' ile biten p'lerin HTML içeriğini değiştirsin" yazsın ve sadece ilgili p lerin içeriğine Merhaba JQuery yazsın.
+
+            $("#dokuz").click(function () {
+                $('p[id != "text"]').html('');
+
+                $("#metin").html("ID'si '6' ile biten p'lerin HTML içeriğini değiştirsin");
+                $('p[id $= 6]').html('Merhaba JQuery');
+            });
+
+            //Sayfadaki her şeyi silip yerine "Merhaba JQuery yazsın.
+
+            $("#on").click(function () {
+                $('p[id != "text"]').html('');
+
+                $('*').html('Merhaba JQuery');
+            });
+
+            //Buton11'e tıklandığında üzerinde 'Merhaba JQuery' yazsın.
+
+            $("#onbir").click(function () {
+                $('p[id != "text"]').html('');
+
+                $("#metin").html("Buton11'e tıklandığında üzerinde 'Merhaba JQuery' yazsın.");
+                $(this).html('Merhaba JQuery');
+            });
+
+            //ornek12 butonuna tıklandığında mesaj olarak "p elementinin classı metin olanların HTML içeriğini değiştirsin" yazsın ve sadece ilgili p lerin içeriğine Merhaba JQuery yazsın.
+
+            $("#oniki").click(function () {
+                $('p[id != "text"]').html('');
+
+                $("#metin").html("p elementinin classı metin olanların HTML içeriğini değiştirsin");
+                $("p.metin").html('Merhaba JQuery');
+            });
+
+            //ornek13 butonuna tıklandığında mesaj olarak "p elementlerinden ilkinin HTML içeriğini değiştirsin" yazsın ve sadece ilgili p nin içeriğine Merhaba JQuery yazsın.
+
+            $("#onuc").click(function () {
+                $('p[id != "text"]').html('');
+                
+                $("#metin").html("p elementlerinden ilkinin HTML içeriğini değiştirsin");
+                $("p:first").html('Merhaba JQuery');
+            });
+
+            //ornek14 butonuna tıklandığında mesaj olarak "a elementinin class ı btn olanların HTML içeriğini değiştirsin" yazsın ve sadece ilgili a nin içeriğine Merhaba JQuery yazsın.
+
+            $("#ondort").click(function () {
+                $('p[id != "text"]').html('');
+
+                $("#metin").html("a elementinin class ı btn olanların HTML içeriğini değiştirsin");
+                $("a.btn").html('Merhaba JQuery');
+            });
+
+            //ornek15 butonuna tıklandığında mesaj olarak "p elementlerinden sonuncusunun HTML içeriğini değiştirsin" yazsın ve sadece ilgili p nin içeriğine Merhaba JQuery yazsın.
+
+            $("#onbes").click(function () {
+                $('p[id != "text"]').html('');
+
+                $("#metin").html("p elementlerinden sonuncusunun HTML içeriğini değiştirsin");
+                $("p:last").html('Merhaba JQuery');
+            });
+
+            //ornek16 butonuna tıklandığında mesaj olarak "checkbox ın arkaplanı kırmızı yapılsın" yazsın ve ilgili checkbox arkaplanı değiştirilsin.
+
+            $("#onalti").click(function () {
+                $('p[id != "text"]').html('');
+
+                $("#metin").html("checkbox ın arkaplanı kırmızı yapılsın");
+                $(":checkbox").wrap("<label style='background-color:red'>");
+            });
+
+            //ornek17 butonuna tıklandığında mesaj olarak "text ın içine Merhaba JQuery yazılsın" yazsın ve ilgili textbox ın içine yazı eklensin.
+
+            $("#onyedi").click(function () {
+                $('p[id != "text"]').html('');
+
+                $("#metin").html("text ın içine Merhaba JQuery yazılsın");
+                $(":text").val("Merhaba JQuery");
+            });
+
+            //ornek18 butonuna tıklandığında mesaj olarak "içerisinde ders yazısı geçenlerin arkaplanı sarı yapılsın" yazsın ve ilgili yerlerde değişiklik yapılsın
+
+            $("#onsekiz").click(function () {
+                $('p[id != "text"]').html('');
+
+                $("#metin").html("İçerisinde ders yazısı geçenlerin arkaplanı sarı yapılsın");
+                $("p:contains('Dersleri')").css("background-color", "yellow");
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <!--bootstrap in ana çerçevesidir.-->
+        <div class="row" style="margin-top:50px;">
+            <!--container içine bir satır ekler-->
+            <div class="panel panel-default">
+                <!--çerçeve gibi kullanabilmek için panel tanımlanır. Ekstra stiller verilebilir-->
+                <div class="panel-body">
+                    <div class="col-lg-12">
+                        <!--ekranı bölmek için col kullanılır.lg large ekranda tek bir kolon gibi davranır 12 seçtiğimiz için çünkü toplamda 12 var. 6 dersek 2 ,3 dersek 4 kolon sığar.-->
+                        <p id="metin1" lang="tr" class="metin" style="background-color:#b23333"></p>
+                        <p id="metin2" lang="en" class="metin" style="background-color:#dc8484"></p>
+                        <p id="metin3" lang="tr" class="metin" style="background-color:#808080"></p>
+                        <p id="Bametin4" lang="fr" class="metin" style="background-color:#3f519a"></p>
+                        <p id="metin5" lang="tr" class="metin" style="background-color:#789611"></p>
+                        <p id="Bametin6" lang="en" class="metin" style="background-color:#844abe"></p>
+                    </div>
+                </div>
+            </div>
+            <figure>
+                <pre>
+                <span>
+                    https://api.jquery.com/category/selectors/ adresinden tüm selector lara ulaşabilirsiniz...
+                </span>
+                <br />
+                <span id="metin">
+                            <!--buraya jquery ile yazı yazacağız-->
+                        </span>
+                    </pre>
+            </figure>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="col-lg-12">
+                        <div class="btn-group btn-group-justified">
+                            <!--justified sağa sola ortalar, iki kenara yaslar.-->
+                            <a id="bir" class="btn btn-default">Örnek-1</a><!--btn-default rengini gri verir.-->
+                            <a id="iki" class="btn btn-info">Örnek-2</a>
+                            <a id="uc" class="btn btn-danger">Örnek-3</a>
+                            <a id="dort" class="btn btn-success">Örnek-4</a>
+                            <a id="bes" class="btn btn-primary">Örnek-5</a>
+                            <a id="alti" class="btn btn-warning">Örnek-6</a>
+                            <a id="yedi" class="btn btn-info">Örnek-7</a>
+                            <a id="sekiz" class="btn btn-primary">Örnek-8</a>
+                            <a id="dokuz" class="btn btn-danger">Örnek-9</a>
+                            <a id="on" class="btn btn-info">Örnek-10</a>
+                            <a id="onbir" class="btn btn-primary">Örnek-11</a>
+                            <a id="oniki" class="btn btn-success">Örnek-12</a>
+                        </div><br />
+                        <div class="btn-group btn-group-justified">
+                            <a id="onuc" class="btn btn-primary">Örnek-13</a>
+                            <a id="ondort" class="btn btn-warning">Örnek-14</a>
+                            <a id="onbes" class="btn btn-info">Örnek-15</a>
+                            <a id="onalti" class="btn btn-danger">Örnek-16</a>
+                            <a id="onyedi" class="btn btn-success">Örnek-17</a>
+                            <a id="onsekiz" class="btn btn-primary">Örnek-18</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div>
+                <input type="checkbox" /><br /><br />
+                <input type="text"/><br /><br />
+                <p id="text">Bilge Adam Yıldız Yazılımcı Yetiştirme Programı</p>
+                <p id="text">Bilge Adam JQuery Dersleri</p>
+                <p id="text">Bilge Adam Javascript Dersleri</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

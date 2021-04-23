@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>JQuery Ornek-1</title>
+    <script src="Scripts/jquery-3.3.1.min.js"></script>
+
+    <script>
+        $(document).ready(function () {//bu doküman yüklenip hazır olduğunda çalışacak functionı gösterir.
+           // document.getElementById("btnSelamla").click//js de böyle diyorduk
+            $("#btnSelamla").click(function(){
+                alert("Hoşgeldiniz...");
+            });
+        });
+    </script>
+</head>
+<body>
+    <input type="button" value="Selamla!" id="btnSelamla"/>
+</body>
+</html>

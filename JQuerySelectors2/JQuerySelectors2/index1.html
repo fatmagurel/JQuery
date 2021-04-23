@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+    <style>
+        .btn {
+            border: 2px solid black;
+            margin-left: 10px;
+            padding: 3px;
+            color: black;
+            text-decoration: none; /*alt çizgi yok*/
+        }
+    </style>
+
+    <script>
+        $(document).ready(function () {
+            //ID si bir olan butona tıklandığında id si sehirler olan li lerin css ini değiştirelim.
+            $("#bir").click(function () {
+                $("ul#sehirler>li").css({
+                    "color": "black",
+                    "background-color": "yellow",
+                    "font-weight": "bold",
+                    "text-align": "center"
+                });
+            });
+
+
+            //ID Sİ iki olan butona tıklandığında class ı metin olan divlerin içinde beşiktaş kelimesi geçiyorsa bu div lern arkaplan rengi siyah, yazı rengi beyaz olsun.
+
+            $("#iki").click(function () {
+                $("div.metin:contains('Beşiktaş')").css("background-color", "black").css("color", "white");
+            });
+
+            //ID si uc olan butona tıklandığında, sehirler  id sine sahip listenin text sayılı index elemanlarına ve çift sayılı index elemanlarına farklı css ler uygulansın.
+
+            $("#uc").click(function () {
+                $("ul#sehirler>li:odd").css({
+                    "color": "black",
+                    "background-color": "yellow",
+                    "font-weight": "bold",
+                    "text-align": "center"
+                });
+
+                $("ul#sehirler>li:even").css({
+                    "color": "black",
+                    "background-color": "lightgreen",
+                    "font-weight": "bold",
+                    "text-align": "center"
+                });
+            });
+
+            //ID si dort olan butona tıklandığında, id si semtler olan tablonun çift index li satırların arkaplan rengi mavi kantaron çiçeği rengi olsun.
+            $("#dort").click(function () {
+                $("table#semtler tbody tr:even").css("background-color", "cornflowerblue");
+            });
+        });
+
+    </script>
+</head>
+<body>
+    <div class="container">
+        <a href="#" class="btn" id="bir">Örnek 1</a><!--href jquery ile select yapılacak-->
+        <a href="#" class="btn" id="iki">Örnek 2</a>
+        <a href="#" class="btn" id="uc">Örnek 3</a>
+        <a href="#" class="btn" id="dort">Örnek 4</a>
+    </div>
+
+    <hr />
+
+    <div class="container">
+        <ul id="sehirler">
+            <li>İstanbul</li>
+            <li>Ankara</li>
+            <li>İzmir</li>
+            <li>Eskişehir</li>
+            <li>Adana</li>
+            <li>Adıyaman</li>
+            <li>Trabzon</li>
+            <li>Burdur</li>
+        </ul>
+    </div>
+
+    <hr />
+
+    <div class="container">
+        <div class="metin">Bu sene şampiyon Beşiktaş olacak!</div>
+        <div class="metin">Her yeri siyah beyaza boyayacağız!</div>
+        <div class="metin">Trih yine Beşiktaş'ı yazacak!</div>
+    </div>
+
+    <hr />
+
+    <div class="container">
+        <table id="semtler">
+            <thead>
+                <!--başlık alanı-->
+                <tr>
+                    <th>Şehirler</th>
+                    <th>Semtler</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <!--gövde alanı-->
+                <tr>
+                    <td> İstanbul</td>
+                    <td>Bakırköy</td>
+                </tr>
+                <tr>
+                    <td>Ankara</td>
+                    <td>Kızılay</td>
+                </tr>
+                <tr>
+                    <td>İzmir</td>
+                    <td>Konak</td>
+                </tr>
+            </tbody>
+
+            <tfoot>
+                <!--footer-->
+
+            </tfoot>
+        </table>
+    </div>
+
+</body>
+</html>

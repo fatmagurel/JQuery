@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31112.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JQuerySelectors2", "JQuerySelectors2\JQuerySelectors2.csproj", "{C916EF35-6BE4-40A8-8CFB-3D88F42C027C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C916EF35-6BE4-40A8-8CFB-3D88F42C027C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C916EF35-6BE4-40A8-8CFB-3D88F42C027C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C916EF35-6BE4-40A8-8CFB-3D88F42C027C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C916EF35-6BE4-40A8-8CFB-3D88F42C027C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {64AFC3A1-9185-4D59-A999-A7159EA3782D}
+	EndGlobalSection
+EndGlobal

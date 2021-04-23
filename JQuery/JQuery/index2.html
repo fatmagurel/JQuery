@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>JQuery Orenk-2</title>
+    <script src="Scripts/jquery-3.3.1.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#btnKadarSaydir").click(function () {
+                $("#divSayilar").html("");//temizler.
+
+                var sayi = $("#txtSayi").val();//id si txtSayi olanın valuesını alacak.
+
+                for (var i = 1; i <= sayi; i++) {
+                    $("#divSayilar").append('<p>' + i + '</p>'); //append ile son elementin peşine ekleme yapar. Boşsa da ekler.
+
+                }
+
+                var index = 1;
+                $("#divSayilar p").each(function () {//div içinde kaç tane p olduğunu bilmiyoruz each ile bütün p leri dolaşır.iterasyonu biz artırıyoruz.
+                    if (index % 2 == 1) {
+                        $(this).addClass("tek");
+                    }
+                    else {
+                        $(this).addClass("cift");
+                    }
+                    index++;
+                });
+            });
+        });
+    </script>
+
+    <style>
+        .tek {
+            background-color: lightgreen;
+        }
+
+        .cift {
+            background-color: coral;
+        }
+    </style>
+
+</head>
+<body>
+    <input type="text" id="txtSayi"/>
+    <input type="button" value="Kadar Saydır" id="btnKadarSaydir"/>
+
+    <br />
+
+    <div id="divSayilar">
+
+    </div>
+</body>
+</html>
